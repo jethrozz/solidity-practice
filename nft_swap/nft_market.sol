@@ -60,7 +60,7 @@ contract nft_market is IERC721Receiver {
     }
 
     //撤单事件
-    function list(address _nftAddr, uint256 _tokenId) public {
+    function revoke(address _nftAddr, uint256 _tokenId) public {
         //先从记录中取出订单
         Order storage _order = nftList[_nftAddr][_tokenId];
         if(_order.owner != msg.sender){
